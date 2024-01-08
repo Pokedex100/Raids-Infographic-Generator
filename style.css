@@ -217,6 +217,8 @@ li {
     inline-size: 3ch;
     block-size: 3ch;
     text-align: center;
+    padding-block-start: 2px;
+    margin: 2px;
 }
 
 .weather {
@@ -232,7 +234,7 @@ li {
 
 .Rain {
     scale: 1.1;
-
+    clip-path: circle(40%);
 }
 
 .Fog {
