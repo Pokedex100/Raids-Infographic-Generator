@@ -248,3 +248,17 @@ li {
 .Windy {
     padding: 1px;
 }
+
+.tier {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    margin-block: 120px;
+    gap: 10px;
+}
+
+h1 {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: -60px;
+}
