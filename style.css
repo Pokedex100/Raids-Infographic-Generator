@@ -218,3 +218,22 @@ li {
     block-size: 3ch;
     text-align: center;
 }
+
+.weather {
+    inline-size: 70px;
+    block-size: 60px;
+    object-fit: contain;
+}
+
+.weather:not(.Rain) {
+    scale: 0.8;
+}
+
+.Rain {
+    scale: 1.1;
+
+}
+
+.Fog {
+    padding: 8px
+}

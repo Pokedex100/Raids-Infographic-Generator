@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const boostedWeatherMap = new Map([
-  ["Fire", "Sunny-Clear"],
-  ["Grass", "Sunny-Clear"],
-  ["Ground", "Sunny-Clear"],
+  ["Fire", "Clear"],
+  ["Grass", "Clear"],
+  ["Ground", "Clear"],
   ["Water", "Rain"],
   ["Electric", "Rain"],
   ["Bug", "Rain"],
@@ -178,12 +178,20 @@ const buildUI = (
   h2.textContent = `${name} ${form}`;
   let imgWrapper = document.createElement("div");
   let pokemon = document.createElement("img");
+  let weatherWrapper = document.createElement("div");
   for (const type of types) {
     let img = document.createElement("img");
     img.classList.add("type-disc");
     img.classList.add(type.toLowerCase());
     img.src = `./icons/${type.toLowerCase()}.svg`;
     imgWrapper.appendChild(img);
+  }
+  for (const weather of boostedWeather) {
+    let weatherIcon = document.createElement("img");
+    weatherIcon.classList.add("weather");
+    weatherIcon.classList.add(weather);
+    weatherIcon.src = `/images/${weather}.webp`;
+    weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
     name + form.replace("dusk", "").replace(/(.+)/g, "-$1")
@@ -200,6 +208,6 @@ const buildUI = (
     ul.appendChild(li);
   }
 
-  article.append(h2, pokemon, imgWrapper, span1, span2, ul);
+  article.append(h2, pokemon, weatherWrapper, imgWrapper, span1, span2, ul);
   return article;
 };
