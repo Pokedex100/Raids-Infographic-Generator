@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 const boostedWeatherMap = new Map([
-  ["Fire", "Clear"],
-  ["Grass", "Clear"],
-  ["Ground", "Clear"],
+  ["Fire", "Sunny/Clear"],
+  ["Grass", "Sunny/Clear"],
+  ["Ground", "Sunny/Clear"],
   ["Water", "Rain"],
   ["Electric", "Rain"],
   ["Bug", "Rain"],
@@ -187,6 +187,19 @@ const buildUI = (
     imgWrapper.appendChild(img);
   }
   for (const weather of boostedWeather) {
+    if (weather === "Sunny/Clear") {
+      let sunnyIcon = document.createElement("img");
+      sunnyIcon.classList.add("weather");
+      sunnyIcon.classList.add("Sunny");
+      sunnyIcon.src = "/images/Sunny.webp";
+      weatherWrapper.appendChild(sunnyIcon);
+      let clearIcon = document.createElement("img");
+      clearIcon.classList.add("weather");
+      clearIcon.classList.add("Clear");
+      clearIcon.src = "/images/Clear.webp";
+      weatherWrapper.appendChild(clearIcon);
+      continue;
+    }
     let weatherIcon = document.createElement("img");
     weatherIcon.classList.add("weather");
     weatherIcon.classList.add(weather);

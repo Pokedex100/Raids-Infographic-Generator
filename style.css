@@ -223,6 +223,7 @@ li {
     inline-size: 70px;
     block-size: 60px;
     object-fit: contain;
+    image-rendering: optimizeQuality;
 }
 
 .weather:not(.Rain) {
@@ -236,4 +237,12 @@ li {
 
 .Fog {
     padding: 8px
+}
+
+.Clear {
+    padding: 3px;
+}
+
+.Windy {
+    padding: 1px;
 }
