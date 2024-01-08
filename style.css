@@ -252,13 +252,16 @@ li {
 .tier {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     margin-block: 120px;
+    justify-content: center;
     gap: 10px;
 }
 
 h1 {
     position: absolute;
-    inset-inline-start: 0;
+    text-align: center;
+    translate: -50% 0;
+    inset-inline-start: 50%;
     inset-block-start: -60px;
 }
