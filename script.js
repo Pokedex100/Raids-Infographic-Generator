@@ -203,7 +203,7 @@ const buildUI = (
     let weatherIcon = document.createElement("img");
     weatherIcon.classList.add("weather");
     weatherIcon.classList.add(weather);
-    weatherIcon.src = `/images/${weather}.webp`;
+    weatherIcon.src = `./images/${weather}.webp`;
     weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
