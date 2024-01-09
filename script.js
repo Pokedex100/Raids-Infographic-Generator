@@ -191,12 +191,12 @@ const buildUI = (
       let sunnyIcon = document.createElement("img");
       sunnyIcon.classList.add("weather");
       sunnyIcon.classList.add("Sunny");
-      sunnyIcon.src = "/images/Sunny.webp";
+      sunnyIcon.src = "./images/Sunny.webp";
       weatherWrapper.appendChild(sunnyIcon);
       let clearIcon = document.createElement("img");
       clearIcon.classList.add("weather");
       clearIcon.classList.add("Clear");
-      clearIcon.src = "/images/Clear.webp";
+      clearIcon.src = "./images/Clear.webp";
       weatherWrapper.appendChild(clearIcon);
       continue;
     }
