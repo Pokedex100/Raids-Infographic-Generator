@@ -19,8 +19,8 @@ button {
     border: 1px solid rgb(61, 106, 255);
     font-size: 14px;
     text-transform: uppercase;
-    font-weight: 600;
     letter-spacing: 2px;
+    font-weight: 600;
     background: transparent;
     color: #fff;
     overflow: hidden;
