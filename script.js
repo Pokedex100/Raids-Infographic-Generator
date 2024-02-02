@@ -178,7 +178,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
       tier
     )
   );
-  document.body.appendChild(parentEl);
+  document.querySelector(".screenshot").appendChild(parentEl);
 };
 
 const buildUI = (
