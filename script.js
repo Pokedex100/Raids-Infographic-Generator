@@ -116,6 +116,7 @@ const buildTier = (group, tier) => {
   let div = document.createElement("div");
   let h1 = document.createElement("h1");
   h1.textContent = tier;
+  h1.classList.add("tier-strip");
   div.appendChild(h1);
   div.classList.add(tier.replace(/[\ ]/g, "-"));
   div.classList.add("tier");
@@ -143,7 +144,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl) => {
   for (const type of pokemonType) {
     boostedWeatherSet.add(boostedWeatherMap.get(type));
   }
-  let defaultCP = pokemon.querySelector("span").textContent;
+  let defaultCP = pokemon.querySelector("span").textContent.replace("CP", "");
   let boostedCP = pokemon.querySelectorAll("span")[1].textContent;
   let difficultyMeter = [];
   for (const color of pokemon.querySelectorAll("a>div>div")) {
@@ -174,11 +175,16 @@ const buildUI = (
   boostedWeather,
   article
 ) => {
+  let h3 = document.createElement("h3");
+  h3.textContent = form || `empty`;
   let h2 = document.createElement("h2");
-  h2.textContent = `${name} ${form}`;
+  h2.textContent = name;
+  if (!form) h3.classList.add("empty");
   let imgWrapper = document.createElement("div");
+  imgWrapper.classList.add("disc-container");
   let pokemon = document.createElement("img");
   let weatherWrapper = document.createElement("div");
+  weatherWrapper.classList.add("weather-wrapper");
   for (const type of types) {
     let img = document.createElement("img");
     img.classList.add("type-disc");
@@ -209,11 +215,15 @@ const buildUI = (
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
     name + form.replace("dusk", "").replace(/(.+)/g, "-$1")
   ).toLowerCase()}.png`;
+  pokemon.classList.add("pokemon-image");
   let span1 = document.createElement("span");
+  span1.classList.add("non-boosted-cp");
   span1.textContent = defaultCP;
   let span2 = document.createElement("span");
+  span2.classList.add("boosted-cp");
   span2.textContent = boostedCP;
   let ul = document.createElement("ul");
+  ul.classList.add("difficulty-icons");
   for (let i = 0; i < 5; i++) {
     let li = document.createElement("li");
     li.textContent = i + 1;
@@ -221,6 +231,6 @@ const buildUI = (
     ul.appendChild(li);
   }
 
-  article.append(h2, pokemon, weatherWrapper, imgWrapper, span1, span2, ul);
+  article.append(h2, h3, pokemon, weatherWrapper, imgWrapper, span1, span2, ul);
   return article;
 };

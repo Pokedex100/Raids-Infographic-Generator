@@ -998,6 +998,7 @@
       "french": "Rattata"
     },
     "type": [
+      "Dark",
       "Normal"
     ],
     "base": {
@@ -1441,6 +1442,10 @@
     },
     "type": [
       "Ground"
+    ],
+    "alolan": [
+      "Ice",
+      "Steel"
     ],
     "base": {
       "HP": 50,
@@ -2857,6 +2862,12 @@
     },
     "type": [
       "Normal"
+    ],
+    "alolan": [
+      "Dark"
+    ],
+    "galarian": [
+      "Steel"
     ],
     "base": {
       "HP": 40,
@@ -4921,7 +4932,8 @@
       "french": "Tadmorv"
     },
     "type": [
-      "Poison"
+      "Poison",
+      "Dark"
     ],
     "base": {
       "HP": 80,
@@ -6130,6 +6142,10 @@
       "french": "Smogogo"
     },
     "type": [
+      "Poison"
+    ],
+    "galarian": [
+      "Fairy",
       "Poison"
     ],
     "base": {
@@ -14505,6 +14521,10 @@
       "french": "Zigzaton"
     },
     "type": [
+      "Normal"
+    ],
+    "galarian": [
+      "Dark",
       "Normal"
     ],
     "base": {
