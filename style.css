@@ -300,6 +300,7 @@ h1 {
 }
 
 .tier-strip {
+    cursor: pointer;
     display: block;
     inline-size: 100%;
     background-color: #e1d7f6;
@@ -341,6 +342,7 @@ h3.empty {
 
 .raid-pokemon {
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .raid-pokemon:hover::after {

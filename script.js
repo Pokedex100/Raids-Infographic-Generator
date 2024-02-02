@@ -130,6 +130,7 @@ const buildTier = (group, tier) => {
   let h1 = document.createElement("h1");
   h1.textContent = tier;
   h1.classList.add("tier-strip");
+  h1.addEventListener("click", () => h1.remove());
   div.appendChild(h1);
   div.classList.add(tier.replace(/[\ ]/g, "-"));
   div.classList.add("tier");
