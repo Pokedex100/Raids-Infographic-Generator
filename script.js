@@ -88,6 +88,19 @@ const boostedWeatherMap = new Map([
   ["Rock", "PartlyCloudy"],
   ["Normal", "PartlyCloudy"],
 ]);
+const fixColor = (color) => {
+  if (color.includes("94a3b8") && color.includes("7dd3fc"))
+    return "background: #00C052;";
+  if (color.includes("16a34a") && color.includes("4ade80"))
+    return "background: #73DF45;";
+  if (color.includes("d97706") && color.includes("fbbf24"))
+    return "background: #e8b93f;";
+  if (color.includes("be123c") && color.includes("f43f5e"))
+    return "background: #B80E0E;";
+  if (color.includes("94a3b8") && color.includes("cbd5e1"))
+    return "background: #474747;";
+  return color;
+};
 
 const parseDataIntoPokemon = async (data) => {
   // Shows 2 options that work, Beautiful Soup and DOMParser
@@ -230,7 +243,7 @@ const buildUI = (
   for (let i = 0; i < 5; i++) {
     let li = document.createElement("li");
     li.textContent = i + 1;
-    li.setAttribute("style", difficultyMeter[i]);
+    li.setAttribute("style", fixColor(difficultyMeter[i]));
     ul.appendChild(li);
   }
 
