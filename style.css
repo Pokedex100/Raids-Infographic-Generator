@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 body {
@@ -320,7 +320,7 @@ h1 {
 .weather-wrapper {
     position: absolute;
     inset-inline-end: 220px;
-    inset-block-end: 65px;
+    inset-block-end: 73px;
 }
 
 .non-boosted-cp {
