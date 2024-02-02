@@ -338,3 +338,21 @@ h3 {
 h3.empty {
     color: transparent;
 }
+
+.raid-pokemon {
+    transition: all 0.3s ease-in-out;
+}
+
+.raid-pokemon:hover::after {
+    position: absolute;
+    content: url("./images/eye.png");
+    inline-size: 100%;
+    block-size: 100%;
+    z-index: 1;
+    border-radius: 30px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 255, 255, 0.334);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
