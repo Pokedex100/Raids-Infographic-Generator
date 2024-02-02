@@ -39,9 +39,9 @@ button:hover {
 }
 
 button:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
+    -webkit-animation: shadow 0.5s 0s linear;
+    -moz-animation: shadow 0.5s 0s linear;
+    animation: shadow 0.5s 0s linear;
 }
 
 button::before {
@@ -62,7 +62,7 @@ button::before {
     transform: skewX(-20deg);
 }
 
-@keyframes sh02 {
+@keyframes shadow {
     from {
         opacity: 0;
         left: 0%;
@@ -221,7 +221,7 @@ li {
     block-size: 35px;
     object-fit: contain;
     image-rendering: optimizeQuality;
-    opacity: 0.1;
+    opacity: 0.6;
     margin-inline: -5px;
 }
 

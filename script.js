@@ -121,10 +121,10 @@ const buildTier = (group, tier) => {
   div.classList.add(tier.replace(/[\ ]/g, "-"));
   div.classList.add("tier");
   for (const pokemon of group.querySelectorAll(".bg-slate-700"))
-    buildPokemonUnderTier(pokemon, div);
+    buildPokemonUnderTier(pokemon, div, tier);
 };
 
-const buildPokemonUnderTier = async (pokemon, parentEl) => {
+const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
   let article = document.createElement("article");
   article.classList.add("raid-pokemon");
   let dexNumber = pokemon.querySelector("img").src.split("_")[2];
@@ -159,7 +159,8 @@ const buildPokemonUnderTier = async (pokemon, parentEl) => {
       variant,
       pokemonType,
       [...boostedWeatherSet].sort(),
-      article
+      article,
+      tier
     )
   );
   document.body.appendChild(parentEl);
@@ -173,13 +174,15 @@ const buildUI = (
   form,
   types,
   boostedWeather,
-  article
+  article,
+  tier
 ) => {
   let h3 = document.createElement("h3");
   h3.textContent = form || `empty`;
   let h2 = document.createElement("h2");
   h2.textContent = name;
   if (!form) h3.classList.add("empty");
+  if (tier.includes("Mega")) form = "mega";
   let imgWrapper = document.createElement("div");
   imgWrapper.classList.add("disc-container");
   let pokemon = document.createElement("img");
