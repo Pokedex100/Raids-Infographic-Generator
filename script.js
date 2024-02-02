@@ -140,6 +140,7 @@ const buildTier = (group, tier) => {
 const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
   let article = document.createElement("article");
   article.classList.add("raid-pokemon");
+  article.addEventListener("click", () => article.remove());
   let dexNumber = pokemon.querySelector("img").src.split("_")[2];
   let variant =
     pokemon
