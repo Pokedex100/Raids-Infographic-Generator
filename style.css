@@ -9,7 +9,7 @@
 
 body {
     background-color: #0e1012;
-    color: #fafffd;
+    color: #e1d7f6;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -17,13 +17,13 @@ button {
     position: relative;
     padding: 10px 20px;
     border-radius: 7px;
-    border: 1px solid rgb(61, 106, 255);
+    border: 1px solid rgb(93, 61, 255);
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
     background: transparent;
-    color: #fff;
+    color: #e1d7f6;
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: all 0.2s ease-in;
@@ -32,8 +32,8 @@ button {
 }
 
 button:hover {
-    background: rgb(61, 106, 255);
-    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    background: rgb(93, 61, 255);
+    box-shadow: 0 0 30px 5px rgba(31, 0, 236, 0.815);
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
@@ -54,8 +54,8 @@ button::before {
     top: 7%;
     left: 0%;
     opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
+    background: #e1d7f6;
+    box-shadow: 0 0 50px 30px #e1d7f6;
     -webkit-transform: skewX(-20deg);
     -moz-transform: skewX(-20deg);
     -ms-transform: skewX(-20deg);
