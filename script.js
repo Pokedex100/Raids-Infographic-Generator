@@ -79,6 +79,10 @@ button.addEventListener("click", async () => {
     Toastify({
       text: "Raids Data Updated",
       duration: 3000,
+      style: {
+        background:
+          "linear-gradient(to right, rgb(93, 61, 255), rgba(31, 0, 236, 0.815))",
+      },
     }).showToast();
     button.setAttribute("disabled", true);
     setTimeout(() => {
