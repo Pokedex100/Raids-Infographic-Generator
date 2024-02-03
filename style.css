@@ -391,14 +391,14 @@ img.shiny:hover {
 }
 
 .chart-container {
-    background-color: rgb(0, 170, 255);
+    background-color: #ffb499;
     background-image:
-        radial-gradient(at 40% 20%, rgb(122, 255, 204) 0px, transparent 50%),
-        radial-gradient(at 80% 0%, rgb(139, 31, 255) 0px, transparent 50%),
-        radial-gradient(at 0% 50%, rgb(219, 234, 255) 0px, transparent 50%),
-        radial-gradient(at 80% 50%, hsla(340, 100%, 76%, 1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgb(138, 214, 255) 0px, transparent 50%),
-        radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
+        radial-gradient(at 19% 66%, hsla(350, 94%, 65%, 1) 0px, transparent 50%),
+        radial-gradient(at 2% 30%, hsla(290, 67%, 76%, 1) 0px, transparent 50%),
+        radial-gradient(at 66% 56%, hsla(175, 97%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 49% 84%, rgb(177, 89, 248) 0px, transparent 50%),
+        radial-gradient(at 76% 0%, hsla(260, 60%, 77%, 1) 0px, transparent 50%),
+        radial-gradient(at 33% 73%, rgb(124, 209, 233) 0px, transparent 50%);
     padding-block: 30px;
     padding-inline: 40px;
     inline-size: 100vw;
