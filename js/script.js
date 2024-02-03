@@ -179,6 +179,7 @@ const parseDataIntoPokemon = async (data) => {
   const stealColors = () => {
     let color_thief = new ColorThief();
     let sample_image = new Image();
+    let co_sample_image = new Image();
 
     sample_image.onload = () => {
       let result = ntc.name(
@@ -191,7 +192,24 @@ const parseDataIntoPokemon = async (data) => {
             })
             .join("")
       );
-
+      document
+        .querySelector(".chart-container")
+        .setAttribute(
+          "style",
+          `background-color: ${result[0]};background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+        );
+    };
+    co_sample_image.onload = () => {
+      let result = ntc.name(
+        "#" +
+          color_thief
+            .getColor(sample_image)
+            .map((x) => {
+              const hex = x.toString(16);
+              return hex.length === 1 ? "0" + hex : hex;
+            })
+            .join("")
+      );
       document
         .querySelector(".chart-container")
         .setAttribute(
@@ -204,6 +222,10 @@ const parseDataIntoPokemon = async (data) => {
     sample_image.src =
       document.querySelector(".Tier-5 img")?.src ||
       document.querySelector(".Shadow-Tier-5 img")?.src;
+    co_sample_image.crossOrigin = "anonymous";
+    co_sample_image.src =
+      document.querySelector(".Mega-Legendary img")?.src ||
+      document.querySelector(".Primal-Legendary img")?.src;
   };
 
   const sortedArrays = tierList
