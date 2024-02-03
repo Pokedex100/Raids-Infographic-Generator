@@ -10,6 +10,7 @@ let button = document.querySelector("button");
 //  https://github.com/gzj666-scy/beautiful-soup-js/blob/master/build/min/beautiful.soup.min.js
 //  https://stackoverflow.com/questions/10932226/how-do-i-get-source-code-from-a-webpage
 //  https://stackoverflow.com/questions/69289275/web-parser-in-javascript-like-beautifulsoup-in-python
+console.clear();
 
 const fetchDataMonthly = async () => {
   await fetch(
@@ -175,6 +176,40 @@ const parseDataIntoPokemon = async (data) => {
   }
   await getPokedexData();
 
+  const stealColors = () => {
+    let color_thief = new ColorThief();
+    let sample_image = new Image();
+
+    sample_image.onload = () => {
+      let result = ntc.name(
+        "#" +
+          color_thief
+            .getColor(sample_image)
+            .map((x) => {
+              const hex = x.toString(16);
+              return hex.length === 1 ? "0" + hex : hex;
+            })
+            .join("")
+      );
+
+      console.log(result[0]); // #f0c420     : Dominant HEX/RGB value of closest match
+      console.log(result[1]); // Moon Yellow : Dominant specific color name of closest match
+      console.log(result[2]); // #ffff00     : Dominant HEX/RGB value of shade of closest match
+      console.log(result[3]); // Yellow      : Dominant color name of shade of closest match
+      document
+        .querySelector(".chart-container")
+        .setAttribute(
+          "style",
+          `background-color: ${result[0]};background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+        );
+    };
+
+    sample_image.crossOrigin = "anonymous";
+    sample_image.src =
+      document.querySelector(".Shadow-Tier-5 img").src ||
+      document.querySelector(".Shadow-Tier-5 img").src;
+  };
+
   const sortedArrays = tierList
     .map((element, index) => ({ element, index }))
     .sort(
@@ -199,6 +234,7 @@ const parseDataIntoPokemon = async (data) => {
   image.setAttribute("height", "40px");
   image.src = "./pokedex.png";
   document.querySelector(".chart-container").appendChild(image);
+  stealColors();
 };
 
 const buildTier = (group, tier) => {

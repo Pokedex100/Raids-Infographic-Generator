@@ -410,6 +410,7 @@ h1.title {
     inset-block-start: 25px;
     font-size: 4rem;
     color: #e1d7f6;
+    mix-blend-mode: difference;
 }
 
 .image-logo {
