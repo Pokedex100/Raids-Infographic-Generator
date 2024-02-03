@@ -393,6 +393,8 @@ p.shiny:hover {
         radial-gradient(at 80% 100%, hsla(242, 100%, 70%, 1) 0px, transparent 50%);
     padding-block: 30px;
     padding-inline: 40px;
+    inline-size: 100vw;
+    overflow: hidden;
 }
 
 h1.title {
