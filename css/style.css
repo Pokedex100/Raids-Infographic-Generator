@@ -364,7 +364,7 @@ h3.empty {
     display: grid;
     place-items: center;
     background-color: rgba(241, 228, 252, 0.334);
-    background-image: url("./images/eye.png");
+    background-image: url("../images/eye.png");
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -416,4 +416,5 @@ h1.title {
     text-align: center;
     display: block;
     margin-inline: auto;
+    margin-block-start: 60px;
 }
