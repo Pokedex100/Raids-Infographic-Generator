@@ -355,14 +355,18 @@ h3.empty {
 .raid-pokemon:hover::after {
     user-select: none;
     position: absolute;
-    content: url("./images/eye.png");
+    content: "";
     inline-size: 100%;
     block-size: 100%;
     z-index: 1;
     border-radius: 30px;
     display: grid;
     place-items: center;
-    background-color: rgba(255, 255, 255, 0.334);
+    background-color: rgba(241, 228, 252, 0.334);
+    background-image: url("./images/eye.png");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
