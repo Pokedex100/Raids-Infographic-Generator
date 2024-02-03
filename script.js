@@ -112,6 +112,20 @@ const parseDataIntoPokemon = async (data) => {
   // const soup = new BeautifulSoup(data);
   // console.log(soup.contents);
   const parsed = parser.parseFromString(html, "text/html");
+  const sortedList = [
+    "Tier 1",
+    "Shadow Tier 1",
+    "Tier 3",
+    "Shadow Tier 3",
+    "Tier 4",
+    "Mega",
+    "Tier 5",
+    "Ultra Beasts",
+    "Shadow Tier 5",
+    "Mega Legendary",
+    "Primal Legendary",
+    "Elite",
+  ];
   let tierList = [];
   let tierNodes = parsed.querySelectorAll(
     ".header-default>div>div:first-child"
@@ -121,6 +135,25 @@ const parseDataIntoPokemon = async (data) => {
     tierList.push(tier.textContent);
   }
   await getPokedexData();
+
+  const sortedArrays = tierList
+    .map((element, index) => ({ element, index }))
+    .sort(
+      (a, b) => sortedList.indexOf(a.element) - sortedList.indexOf(b.element)
+    )
+    .reduce(
+      (acc, { element, index }) => {
+        acc.sortedTierList.push(element);
+        acc.sortedPokemonGroups.push(pokemonGroups[index]);
+        return acc;
+      },
+      { sortedTierList: [], sortedPokemonGroups: [] }
+    );
+
+  pokemonGroups = sortedArrays.sortedPokemonGroups;
+  tierList = sortedArrays.sortedTierList;
+
+  console.log(pokemonGroups, tierList);
   for (let i = 0; i < tierList.length; i++)
     buildTier(pokemonGroups[i], tierList[i]);
 };
