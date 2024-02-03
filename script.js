@@ -189,6 +189,11 @@ const parseDataIntoPokemon = async (data) => {
 
   for (let i = 0; i < tierList.length; i++)
     buildTier(pokemonGroups[i], tierList[i]);
+  let image = document.createElement("img");
+  image.classList.add("image-logo");
+  image.setAttribute("height", "40px");
+  image.src = "./pokedex.png";
+  document.querySelector(".chart-container").appendChild(image);
 };
 
 const buildTier = (group, tier) => {
@@ -325,7 +330,6 @@ const buildUI = (
     li.setAttribute("style", fixColor(difficultyMeter[i]));
     ul.appendChild(li);
   }
-
   article.append(h2, h3, pokemon, weatherWrapper, imgWrapper, span1, span2, ul);
   return article;
 };

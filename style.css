@@ -264,9 +264,13 @@ li {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    margin-block: 120px;
+    margin-block: 110px;
     justify-content: center;
     gap: 10px;
+}
+
+.tier:last-of-type {
+    margin-block-end: 20px;
 }
 
 h1 {
@@ -274,11 +278,12 @@ h1 {
     text-align: center;
     translate: -50% 0;
     inset-inline-start: 50%;
-    inset-block-start: -60px;
+    inset-block-start: -65px;
 }
 
 .raid-pokemon {
     position: relative;
+    user-select: none;
     background-color: #1a171d;
     display: flex;
     flex-direction: column;
@@ -375,4 +380,21 @@ p.shiny:hover {
 .tier-strip:hover {
     text-decoration: line-through;
     text-decoration-color: #dc143c;
+}
+
+.chart-container {
+    background-color: red;
+    padding-block: 30px;
+    padding-inline: 40px;
+}
+
+h1.title {
+    position: relative;
+    inset-block-start: 25px;
+}
+
+.image-logo {
+    text-align: center;
+    display: block;
+    margin-inline: auto;
 }
