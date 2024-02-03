@@ -10,6 +10,7 @@
 body {
     background-color: #0e1012;
     color: #fafffd;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -352,6 +353,7 @@ h3.empty {
 }
 
 .raid-pokemon:hover::after {
+    user-select: none;
     position: absolute;
     content: url("./images/eye.png");
     inline-size: 100%;
