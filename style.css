@@ -365,16 +365,17 @@ h3.empty {
     backdrop-filter: blur(20px);
 }
 
-p.shiny {
+img.shiny {
     position: absolute;
-    font-size: 100px;
-    inset-block-start: -60px;
+    inset-block-start: 15px;
     inset-inline-start: 15px;
     z-index: 4;
+    filter: invert(37%) sepia(86%) saturate(2442%) hue-rotate(227deg) brightness(101%) contrast(100%) grayscale(0.8);
+
 }
 
-p.shiny:hover {
-    color: #1a171d;
+img.shiny:hover {
+    filter: invert(84%) sepia(12%) saturate(664%) hue-rotate(210deg) brightness(104%) contrast(93%);
 }
 
 .tier-strip:hover {
@@ -400,6 +401,8 @@ p.shiny:hover {
 h1.title {
     position: relative;
     inset-block-start: 25px;
+    font-size: 4rem;
+    color: #e1d7f6;
 }
 
 .image-logo {

@@ -228,9 +228,10 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
     : pokemonData.type;
   let boostedWeatherSet = new Set();
 
-  let shinyDot = document.createElement("p");
+  let shinyDot = document.createElement("img");
   // if (shinyPokemonsMap.get(Number(dexNumber)))
-  shinyDot.textContent = ".";
+  shinyDot.src = "./images/shiny.png";
+  shinyDot.setAttribute("height", "40px");
   shinyDot.classList.add("shiny");
   shinyDot.addEventListener("click", () => shinyDot.remove());
   article.addEventListener("click", (e) => {
