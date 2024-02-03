@@ -1,5 +1,6 @@
 let storage;
 let pokedexData;
+let shinyPokemonsJSON;
 let timeStamp = new Date().getMonth() + "" + new Date().getFullYear(); // Update data timeStamp monthly
 let button = document.querySelector("button");
 
@@ -37,6 +38,22 @@ const getPokedexData = async () => {
     .catch((err) => {
       console.log(err);
       // Do something for an error here
+    });
+};
+
+const fetchShinyList = async () => {
+  await fetch(
+    // FREE PROXIES https://nordicapis.com/10-free-to-use-cors-proxies/
+    `https://api.allorigins.win/get?url=${encodeURIComponent(
+      "https://raw.githubusercontent.com/Rplus/Pokemon-shiny/master/assets/pms.json"
+    )}`
+  )
+    .then((response) => {
+      if (response.ok) return response.json();
+      throw new Error("Network response was not ok.");
+    })
+    .then((data) => {
+      shinyPokemonsJSON = data.contents;
     });
 };
 
@@ -106,7 +123,6 @@ const parseDataIntoPokemon = async (data) => {
   // Shows 2 options that work, Beautiful Soup and DOMParser
   // I went with DOMParser to avoid extra dependency on libraries for stuff that can be done using Vanilla JS
   // I know comments are bad :)
-
   const html = data;
   const parser = new DOMParser();
   // const soup = new BeautifulSoup(data);
@@ -135,6 +151,7 @@ const parseDataIntoPokemon = async (data) => {
     tierList.push(tier.textContent);
   }
   await getPokedexData();
+  await fetchShinyList();
 
   const sortedArrays = tierList
     .map((element, index) => ({ element, index }))
@@ -153,7 +170,6 @@ const parseDataIntoPokemon = async (data) => {
   pokemonGroups = sortedArrays.sortedPokemonGroups;
   tierList = sortedArrays.sortedTierList;
 
-  console.log(pokemonGroups, tierList);
   for (let i = 0; i < tierList.length; i++)
     buildTier(pokemonGroups[i], tierList[i]);
 };
@@ -174,7 +190,7 @@ const buildTier = (group, tier) => {
 const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
   let article = document.createElement("article");
   article.classList.add("raid-pokemon");
-  article.addEventListener("click", () => article.remove());
+
   let dexNumber = pokemon.querySelector("img").src.split("_")[2];
   let variant =
     pokemon
@@ -190,7 +206,16 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
     : pokemonData.type;
   let boostedWeatherSet = new Set();
 
-  article.classList.add("shiny");
+  let shinyDot = document.createElement("p");
+  console.log(shinyPokemonsJSON.find((item) => item.dex == dexNumber));
+  if (shinyPokemonsJSON.find((item) => item.dex == dexNumber).releasedDate)
+    shinyDot.textContent = ".";
+  shinyDot.classList.add("shiny");
+  shinyDot.addEventListener("click", () => shinyDot.remove());
+  article.addEventListener("click", (e) => {
+    if (e.target !== shinyDot) article.remove();
+  });
+  article.appendChild(shinyDot);
 
   for (const type of pokemonType) {
     boostedWeatherSet.add(boostedWeatherMap.get(type));

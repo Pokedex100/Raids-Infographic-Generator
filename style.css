@@ -360,12 +360,16 @@ h3.empty {
     backdrop-filter: blur(20px);
 }
 
-.raid-pokemon.shiny::before {
+p.shiny {
     position: absolute;
-    content: ".";
     font-size: 100px;
     inset-block-start: -60px;
     inset-inline-start: 15px;
+    z-index: 4;
+}
+
+p.shiny:hover {
+    color: #1a171d;
 }
 
 .tier-strip:hover {
