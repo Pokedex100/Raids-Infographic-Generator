@@ -82,6 +82,7 @@ button.addEventListener("click", async () => {
       style: {
         background:
           "linear-gradient(to right, rgb(93, 61, 255), rgba(31, 0, 236, 0.815))",
+        borderRadius: "7px",
       },
     }).showToast();
     button.setAttribute("disabled", true);
@@ -265,7 +266,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
       tier
     )
   );
-  document.querySelector(".screenshot").appendChild(parentEl);
+  document.querySelector(".chart-container").appendChild(parentEl);
 };
 
 const buildUI = (

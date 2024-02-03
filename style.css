@@ -395,7 +395,7 @@ img.shiny:hover {
     background-image:
         radial-gradient(at 19% 66%, hsla(350, 94%, 65%, 1) 0px, transparent 50%),
         radial-gradient(at 2% 30%, hsla(290, 67%, 76%, 1) 0px, transparent 50%),
-        radial-gradient(at 66% 56%, hsla(175, 97%, 79%, 1) 0px, transparent 50%),
+        radial-gradient(at 66% 56%, rgb(179, 150, 253) 0px, transparent 50%),
         radial-gradient(at 49% 84%, rgb(177, 89, 248) 0px, transparent 50%),
         radial-gradient(at 76% 0%, hsla(260, 60%, 77%, 1) 0px, transparent 50%),
         radial-gradient(at 33% 73%, rgb(124, 209, 233) 0px, transparent 50%);
