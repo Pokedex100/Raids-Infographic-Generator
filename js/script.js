@@ -192,10 +192,6 @@ const parseDataIntoPokemon = async (data) => {
             .join("")
       );
 
-      console.log(result[0]); // #f0c420     : Dominant HEX/RGB value of closest match
-      console.log(result[1]); // Moon Yellow : Dominant specific color name of closest match
-      console.log(result[2]); // #ffff00     : Dominant HEX/RGB value of shade of closest match
-      console.log(result[3]); // Yellow      : Dominant color name of shade of closest match
       document
         .querySelector(".chart-container")
         .setAttribute(
@@ -206,8 +202,8 @@ const parseDataIntoPokemon = async (data) => {
 
     sample_image.crossOrigin = "anonymous";
     sample_image.src =
-      document.querySelector(".Shadow-Tier-5 img").src ||
-      document.querySelector(".Shadow-Tier-5 img").src;
+      document.querySelector(".Tier-5 img")?.src ||
+      document.querySelector(".Shadow-Tier-5 img")?.src;
   };
 
   const sortedArrays = tierList
