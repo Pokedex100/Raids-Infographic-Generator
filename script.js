@@ -1,7 +1,9 @@
 let storage;
+// let shinyStorage;
 let pokedexData;
-let shinyPokemonsJSON;
+// let shinyPokemonsMap = new Map();
 let timeStamp = new Date().getMonth() + "" + new Date().getFullYear(); // Update data timeStamp monthly
+// let shinyTimeStamp = new Date().getFullYear() + "shiny" + new Date().getMonth();
 let button = document.querySelector("button");
 
 // HELPFUL RESOURCES REGARDING DATA SCRAPPING
@@ -41,33 +43,39 @@ const getPokedexData = async () => {
     });
 };
 
-const fetchShinyList = async () => {
-  await fetch(
-    // FREE PROXIES https://nordicapis.com/10-free-to-use-cors-proxies/
-    `https://api.allorigins.win/get?url=${encodeURIComponent(
-      "https://raw.githubusercontent.com/Rplus/Pokemon-shiny/master/assets/pms.json"
-    )}`
-  )
-    .then((response) => {
-      if (response.ok) return response.json();
-      throw new Error("Network response was not ok.");
-    })
-    .then((data) => {
-      shinyPokemonsJSON = data.contents;
-    });
-};
+// const fetchShinyList = async () => {
+//   await fetch(
+//     // FREE PROXIES https://nordicapis.com/10-free-to-use-cors-proxies/
+//     `https://api.allorigins.win/get?url=${encodeURIComponent(
+//       "https://raw.githubusercontent.com/Rplus/Pokemon-shiny/0eacd51d7b0959f24ef3e2a3e48d693eb9586171/assets/pms.json"
+//     )}`
+//   )
+//     .then((response) => {
+//       if (response.ok) return response.json();
+//       throw new Error("Network response was not ok.");
+//     })
+//     .then((data) => {
+//       localStorage.setItem(shinyTimeStamp, JSON.stringify(data.contents));
+//       return data.contents;
+//     });
+// };
 
 button.addEventListener("click", async () => {
   // Update local data from server and clear old cache
   try {
     let localData = JSON.parse(localStorage.getItem(timeStamp));
+    // let shinyData = JSON.parse(localStorage.getItem(shinyTimeStamp));
     localStorage.clear(); // clear old stored data
     storage = (await fetchDataMonthly()) || localData;
+    // shinyStorage = (await fetchShinyList()) || shinyData;
     localStorage.setItem(timeStamp, JSON.stringify(localData));
+    // localStorage.setItem(shinyTimeStamp, JSON.stringify(shinyData));
   } catch {
     storage = JSON.parse(localStorage.getItem(timeStamp)) || "";
+    // shinyStorage = JSON.parse(localStorage.getItem(shinyTimeStamp)) || "";
   } finally {
     parseDataIntoPokemon(storage);
+    // convertShinyDataToMap(shinyStorage);
     Toastify({
       text: "Raids Data Updated",
       duration: 3000,
@@ -82,7 +90,11 @@ button.addEventListener("click", async () => {
 document.addEventListener("DOMContentLoaded", async () => {
   storage =
     JSON.parse(localStorage.getItem(timeStamp)) || (await fetchDataMonthly());
+  // shinyStorage =
+  //   JSON.parse(localStorage.getItem(shinyTimeStamp)) ||
+  //   (await fetchShinyList());
   parseDataIntoPokemon(storage);
+  // convertShinyDataToMap(shinyStorage);
 });
 
 const boostedWeatherMap = new Map([
@@ -119,6 +131,12 @@ const fixColor = (color) => {
   return color;
 };
 
+// const convertShinyDataToMap = async (data) => {
+//   JSON.parse(data).forEach((element) => {
+//     shinyPokemonsMap.set(element.dex, element.released_date ?? false);
+//   });
+// };
+
 const parseDataIntoPokemon = async (data) => {
   // Shows 2 options that work, Beautiful Soup and DOMParser
   // I went with DOMParser to avoid extra dependency on libraries for stuff that can be done using Vanilla JS
@@ -151,7 +169,6 @@ const parseDataIntoPokemon = async (data) => {
     tierList.push(tier.textContent);
   }
   await getPokedexData();
-  await fetchShinyList();
 
   const sortedArrays = tierList
     .map((element, index) => ({ element, index }))
@@ -207,9 +224,8 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
   let boostedWeatherSet = new Set();
 
   let shinyDot = document.createElement("p");
-  console.log(shinyPokemonsJSON.find((item) => item.dex == dexNumber));
-  if (shinyPokemonsJSON.find((item) => item.dex == dexNumber).releasedDate)
-    shinyDot.textContent = ".";
+  // if (shinyPokemonsMap.get(Number(dexNumber)))
+  shinyDot.textContent = ".";
   shinyDot.classList.add("shiny");
   shinyDot.addEventListener("click", () => shinyDot.remove());
   article.addEventListener("click", (e) => {
