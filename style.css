@@ -319,8 +319,9 @@ h1 {
 
 .weather-wrapper {
     position: absolute;
-    inset-inline-end: 220px;
+    inset-inline-end: 60%;
     inset-block-end: 73px;
+    /* translate: calc(-50px + 50%) 0; */
 }
 
 .non-boosted-cp {
@@ -357,4 +358,9 @@ h3.empty {
     background-color: rgba(255, 255, 255, 0.334);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+}
+
+.tier-strip:hover {
+    text-decoration: line-through;
+    text-decoration-color: #dc143c;
 }
