@@ -189,6 +189,9 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
     ? pokemonData[variant] || pokemonData.type
     : pokemonData.type;
   let boostedWeatherSet = new Set();
+
+  article.classList.add("shiny");
+
   for (const type of pokemonType) {
     boostedWeatherSet.add(boostedWeatherMap.get(type));
   }
