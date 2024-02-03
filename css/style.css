@@ -5,6 +5,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+
+    ::selection {
+        background-color: #c5a1ec;
+    }
 }
 
 body {
@@ -411,6 +415,12 @@ h1.title {
     font-size: 4rem;
     color: #e1d7f6;
     mix-blend-mode: difference;
+
+}
+
+h1.title::selection {
+    color: #89c391;
+    background-color: #437849;
 }
 
 .image-logo {
