@@ -105,6 +105,21 @@ button:disabled {
     margin-block: 30px;
 }
 
+.inventory {
+    display: flex;
+    align-items: center;
+}
+
+input[type="color"] {
+    block-size: 42px;
+    inline-size: 70px;
+}
+
+
+input[type="color"]:nth-of-type(1) {
+    margin-inline-start: 30px;
+}
+
 
 .bug {
     background: #92BC2C;
