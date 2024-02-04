@@ -451,9 +451,9 @@ h1.title::selection {
     position: absolute;
     content: "";
     border: 10px solid #1a171d;
-    border-bottom-color: transparent;
-    border-top-color: transparent;
-    border-left-color: transparent;
+    border-block-end-color: transparent;
+    border-block-start-color: transparent;
+    border-inline-start-color: transparent;
     inset-inline-start: -15px;
     inset-block-start: 10px;
 }
@@ -461,4 +461,19 @@ h1.title::selection {
 .info-tier:hover {
     text-decoration: line-through;
     text-decoration-color: #dc143c;
+}
+
+@media screen and (width<768px) {
+    .info-tier {
+        inline-size: 100%;
+    }
+
+    .info-tier::after {
+        border: 10px solid #1a171d;
+        border-block-start-color: transparent;
+        border-inline-end-color: transparent;
+        border-inline-start-color: transparent;
+        inset-inline-start: 15px;
+        inset-block-start: -15px;
+    }
 }
