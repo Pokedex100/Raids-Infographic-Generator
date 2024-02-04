@@ -228,6 +228,7 @@ input[type="color"]:nth-of-type(1) {
 
 h2 {
     text-transform: capitalize;
+    font-size: 2rem;
 }
 
 
@@ -304,7 +305,7 @@ h1 {
     text-align: center;
     translate: -50% 0;
     inset-inline-start: 50%;
-    inset-block-start: -65px;
+    inset-block-start: -75px;
 }
 
 .raid-pokemon {
@@ -339,6 +340,7 @@ h1 {
     color: #1a171d;
     font-weight: bold;
     padding: 7px;
+    font-size: 2.5rem;
 }
 
 .difficulty-icons {
@@ -367,6 +369,7 @@ h1 {
 h3 {
     color: rgb(225, 197, 128);
     text-transform: capitalize;
+    font-size: 1.5rem;
 }
 
 h3.empty {
