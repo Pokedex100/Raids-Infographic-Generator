@@ -426,7 +426,6 @@ img.shiny:hover {
         radial-gradient(at 33% 73%, rgb(124, 209, 233) 0px, transparent 50%);
     padding-block: 30px;
     padding-inline: 40px;
-    inline-size: 100vw;
     overflow: hidden;
 }
 

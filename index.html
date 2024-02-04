@@ -45,6 +45,18 @@
         <h1 class="title">CURRENT RAID BOSSES</h1>
     </div>
     <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const downloadButton = document.querySelector('.download');
+
+            downloadButton.addEventListener('click', () => {
+                const targetDiv = document.querySelector('.screenshot');
+                document.querySelector(".essentials").remove();
+                document.body.setAttribute("style", "inline-size: 2100px")
+                document.targetDiv.setAttribute("style", "inline-size: 100%")
+            });
+        });
+    </script>
 </body>
 
 </html>

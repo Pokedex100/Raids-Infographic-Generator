@@ -175,7 +175,7 @@ const parseDataIntoPokemon = async (data) => {
   }
   await getPokedexData();
 
-  const toDataURL = (url) =>
+  const toDataURL = async (url) =>
     fetch(url)
       .then((response) => response.blob())
       .then(
