@@ -428,9 +428,8 @@ h1.title {
     position: relative;
     inset-block-start: 25px;
     font-size: 4rem;
-    color: #e1d7f6;
-    mix-blend-mode: difference;
-
+    /* color: #e1d7f6; */
+    color: #1a171d;
 }
 
 h1.title::selection {
