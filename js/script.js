@@ -272,6 +272,7 @@ const parseDataIntoPokemon = async (data) => {
   shadowTierInfo.classList.add("info-tier");
   shadowTierInfo.textContent =
     "Shadow Legendaries will only appear in Shadow Raids during the weekends.";
+  shadowTierInfo.addEventListener("click", () => shadowTierInfo.remove());
   document.querySelector(".Shadow-Tier-5").appendChild(shadowTierInfo);
   document.querySelector(".chart-container").appendChild(image);
   stealColors();
