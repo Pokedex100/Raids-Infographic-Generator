@@ -434,3 +434,18 @@ const buildUI = (
   );
   return article;
 };
+
+let color1 = document.getElementById("color1");
+let color2 = document.getElementById("color2");
+
+const changeBg = () => {
+  document
+    .querySelector(".chart-container")
+    .setAttribute(
+      "style",
+      `background-image:linear-gradient(to right bottom, ${color1.value}, ${color2.value})`
+    );
+};
+
+color1.addEventListener("input", changeBg);
+color2.addEventListener("input", changeBg);
