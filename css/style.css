@@ -455,5 +455,9 @@ h1.title::selection {
     border-left-color: transparent;
     inset-inline-start: -15px;
     inset-block-start: 10px;
+}
 
+.info-tier:hover {
+    text-decoration: line-through;
+    text-decoration-color: #dc143c;
 }
