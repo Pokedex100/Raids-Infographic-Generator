@@ -357,9 +357,13 @@ const buildUI = (
   h2.textContent = name;
   if (!form) h3.classList.add("empty");
   if (tier.includes("Mega")) form = "mega";
+  let categoryImage = document.createElement("img");
+  categoryImage.classList.add("categoryImage");
+  categoryImage.setAttribute("height", "25px");
   if (tier.includes("Shadow")) {
-    let shadowImage = document.createElement("img");
-    shadowImage.src = "../images/shadow.png";
+    categoryImage.src = "../images/shadow.png";
+  } else if (tier.includes("Mega")) {
+    categoryImage.src = "../images/megaRaid.png";
   }
   let imgWrapper = document.createElement("div");
   imgWrapper.classList.add("disc-container");
@@ -411,6 +415,16 @@ const buildUI = (
     li.setAttribute("style", fixColor(difficultyMeter[i]));
     ul.appendChild(li);
   }
-  article.append(h2, h3, pokemon, weatherWrapper, imgWrapper, span1, span2, ul);
+  article.append(
+    h2,
+    h3,
+    pokemon,
+    weatherWrapper,
+    imgWrapper,
+    categoryImage,
+    span1,
+    span2,
+    ul
+  );
   return article;
 };
