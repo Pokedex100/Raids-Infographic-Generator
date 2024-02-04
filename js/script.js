@@ -126,9 +126,9 @@ const fixColor = (color) => {
   if (color.includes("94a3b8") && color.includes("7dd3fc"))
     return "background: #00C052;";
   if (color.includes("16a34a") && color.includes("4ade80"))
-    return "background: #73DF45;";
+    return "background: #d9d030;";
   if (color.includes("d97706") && color.includes("fbbf24"))
-    return "background: #CFA538;";
+    return "background: #d98730;";
   if (color.includes("be123c") && color.includes("f43f5e"))
     return "background: #B80E0E;";
   if (color.includes("94a3b8") && color.includes("cbd5e1"))
