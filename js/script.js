@@ -10,7 +10,6 @@ let button = document.querySelector("button");
 //  https://github.com/gzj666-scy/beautiful-soup-js/blob/master/build/min/beautiful.soup.min.js
 //  https://stackoverflow.com/questions/10932226/how-do-i-get-source-code-from-a-webpage
 //  https://stackoverflow.com/questions/69289275/web-parser-in-javascript-like-beautifulsoup-in-python
-console.clear();
 
 const fetchDataMonthly = async () => {
   await fetch(
@@ -176,7 +175,23 @@ const parseDataIntoPokemon = async (data) => {
   }
   await getPokedexData();
 
-  const stealColors = () => {
+  const toDataURL = (url) =>
+    fetch(url)
+      .then((response) => response.blob())
+      .then(
+        (blob) =>
+          new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(blob);
+          })
+      )
+      .then((dataUrl) => {
+        return "RESULT:", dataUrl;
+      });
+
+  const stealColors = async () => {
     let color_thief = new ColorThief();
     let sample_image = new Image();
     let co_sample_image = new Image();
@@ -219,13 +234,17 @@ const parseDataIntoPokemon = async (data) => {
     };
 
     sample_image.crossOrigin = "anonymous";
-    sample_image.src =
+
+    sample_image.src = await toDataURL(
       document.querySelector(".Tier-5 img")?.src ||
-      document.querySelector(".Shadow-Tier-5 img")?.src;
+        document.querySelector(".Shadow-Tier-5 img")?.src
+    );
+    console.log(sample_image.src);
     co_sample_image.crossOrigin = "anonymous";
-    co_sample_image.src =
+    co_sample_image.src = await toDataURL(
       document.querySelector(".Mega-Legendary img")?.src ||
-      document.querySelector(".Primal-Legendary img")?.src;
+        document.querySelector(".Primal-Legendary img")?.src
+    );
   };
 
   const sortedArrays = tierList
