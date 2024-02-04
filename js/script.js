@@ -4,7 +4,7 @@ let pokedexData;
 // let shinyPokemonsMap = new Map();
 let timeStamp = new Date().getMonth() + "" + new Date().getFullYear(); // Update data timeStamp monthly
 // let shinyTimeStamp = new Date().getFullYear() + "shiny" + new Date().getMonth();
-let button = document.querySelector("button");
+let button = document.querySelector("button.sync");
 
 // HELPFUL RESOURCES REGARDING DATA SCRAPPING
 //  https://github.com/gzj666-scy/beautiful-soup-js/blob/master/build/min/beautiful.soup.min.js
