@@ -444,7 +444,7 @@ const changeBg = () => {
     .querySelector(".chart-container")
     .setAttribute(
       "style",
-      `background-color: ${color1.value}; background-image: radial-gradient(at 19% 66%, ${color2.value} 0px, transparent 50%), radial-gradient(at 2% 30%, ${color1.value} 0px, transparent 50%), radial-gradient(at 49% 84%, ${color2.value} 0px, transparent 50%)`
+      `background-color: ${color1.value}; background-image: radial-gradient(at 19% 66%, ${color2.value} 0px, transparent 50%), radial-gradient(at 2% 30%, ${color2.value} 0px, transparent 50%), radial-gradient(at 49% 84%, ${color1.value} 0px, transparent 50%)`
     );
   let color;
   color = tinycolor(color1.value).isLight() ? "#1a171d" : "#e1d7f6";
