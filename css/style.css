@@ -430,8 +430,11 @@ h1.title {
     position: relative;
     inset-block-start: 25px;
     font-size: 4rem;
+    font-weight: bolder;
     /* color: #e1d7f6; */
     color: #1a171d;
+    text-stroke: 2px #1a171d;
+    -webkit-text-stroke: 2px #1a171d;
 }
 
 .image-logo {

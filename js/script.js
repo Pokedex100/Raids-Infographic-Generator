@@ -358,11 +358,11 @@ const buildUI = (
   tier
 ) => {
   let h3 = document.createElement("h3");
+  if (tier.includes("Mega")) form = "mega";
   h3.textContent = form || `empty`;
   let h2 = document.createElement("h2");
   h2.textContent = name;
   if (!form) h3.classList.add("empty");
-  if (tier.includes("Mega")) form = "mega";
   let categoryImage = document.createElement("img");
   categoryImage.classList.add("categoryImage");
   categoryImage.setAttribute("height", "25px");
@@ -448,7 +448,10 @@ const changeBg = () => {
     );
   let color;
   color = tinycolor(color1.value).isLight() ? "#1a171d" : "#e1d7f6";
-  title.setAttribute("style", `color: ${color}`);
+  title.setAttribute(
+    "style",
+    `color: ${color}; text-stroke: 2px ${color}; -webkit-text-stroke: 2px ${color};`
+  );
   document.querySelector(".image-logo").src = tinycolor(color1.value).isLight()
     ? "./pokedexDark.png"
     : "./pokedex.png";
