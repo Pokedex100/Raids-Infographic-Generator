@@ -28,8 +28,8 @@ const fetchDataMonthly = async () => {
     });
 };
 const getPokedexData = async () => {
-  // Replace ../data.json with your JSON feed
-  await fetch("../data/pokedex.json")
+  // Replace ./data.json with your JSON feed
+  await fetch("./data/pokedex.json")
     .then((response) => {
       return response.json();
     })
@@ -267,7 +267,7 @@ const parseDataIntoPokemon = async (data) => {
   let image = document.createElement("img");
   image.classList.add("image-logo");
   image.setAttribute("height", "40px");
-  image.src = "../pokedex.png";
+  image.src = "./pokedex.png";
   let shadowTierInfo = document.createElement("div");
   shadowTierInfo.classList.add("info-tier");
   shadowTierInfo.textContent =
@@ -312,7 +312,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
 
   let shinyDot = document.createElement("img");
   // if (shinyPokemonsMap.get(Number(dexNumber)))
-  shinyDot.src = "../images/shiny.png";
+  shinyDot.src = "./images/shiny.png";
   shinyDot.setAttribute("height", "40px");
   shinyDot.classList.add("shiny");
   shinyDot.addEventListener("click", () => shinyDot.remove());
@@ -367,9 +367,9 @@ const buildUI = (
   categoryImage.classList.add("categoryImage");
   categoryImage.setAttribute("height", "25px");
   if (tier.includes("Shadow")) {
-    categoryImage.src = "../images/shadow.png";
+    categoryImage.src = "./images/shadow.png";
   } else if (tier.includes("Mega")) {
-    categoryImage.src = "../images/megaRaid.png";
+    categoryImage.src = "./images/megaRaid.png";
   }
   let imgWrapper = document.createElement("div");
   imgWrapper.classList.add("disc-container");
@@ -380,7 +380,7 @@ const buildUI = (
     let img = document.createElement("img");
     img.classList.add("type-disc");
     img.classList.add(type.toLowerCase());
-    img.src = `../icons/${type.toLowerCase()}.svg`;
+    img.src = `./icons/${type.toLowerCase()}.svg`;
     imgWrapper.appendChild(img);
   }
   for (const weather of boostedWeather) {
@@ -388,19 +388,19 @@ const buildUI = (
       let sunnyIcon = document.createElement("img");
       sunnyIcon.classList.add("weather");
       sunnyIcon.classList.add("Sunny");
-      sunnyIcon.src = "../images/Sunny.webp";
+      sunnyIcon.src = "./images/Sunny.webp";
       weatherWrapper.appendChild(sunnyIcon);
       let clearIcon = document.createElement("img");
       clearIcon.classList.add("weather");
       clearIcon.classList.add("Clear");
-      clearIcon.src = "../images/Clear.webp";
+      clearIcon.src = "./images/Clear.webp";
       weatherWrapper.appendChild(clearIcon);
       continue;
     }
     let weatherIcon = document.createElement("img");
     weatherIcon.classList.add("weather");
     weatherIcon.classList.add(weather);
-    weatherIcon.src = `../images/${weather}.webp`;
+    weatherIcon.src = `./images/${weather}.webp`;
     weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
