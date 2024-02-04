@@ -440,6 +440,7 @@ h1.title::selection {
     position: relative;
     background-color: #1a171d;
     border-radius: 10px;
+    cursor: pointer;
     inline-size: 280px;
     padding: 20px;
     margin-block-start: auto;
