@@ -448,10 +448,7 @@ const changeBg = () => {
     );
   let color;
   color = tinycolor(color1.value).isLight() ? "#1a171d" : "#e1d7f6";
-  title.setAttribute(
-    "style",
-    `color: ${color}; text-stroke: 2px ${color}; -webkit-text-stroke: 2px ${color};`
-  );
+  title.setAttribute("style", `color: ${color};`);
   document.querySelector(".image-logo").src = tinycolor(color1.value).isLight()
     ? "./pokedexDark.png"
     : "./pokedex.png";
