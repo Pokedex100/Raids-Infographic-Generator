@@ -435,3 +435,25 @@ h1.title::selection {
     inset-inline-start: 100px;
     inset-block-start: 215px;
 }
+
+.info-tier {
+    position: relative;
+    background-color: #1a171d;
+    border-radius: 10px;
+    inline-size: 280px;
+    padding: 20px;
+    margin-block-start: auto;
+    margin-block-end: 30px;
+}
+
+.info-tier::after {
+    position: absolute;
+    content: "";
+    border: 10px solid #1a171d;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    inset-inline-start: -15px;
+    inset-block-start: 10px;
+
+}
