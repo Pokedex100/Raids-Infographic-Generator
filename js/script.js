@@ -28,8 +28,8 @@ const fetchDataMonthly = async () => {
     });
 };
 const getPokedexData = async () => {
-  // Replace ./data.json with your JSON feed
-  await fetch("./data/pokedex.json")
+  // Replace ../data.json with your JSON feed
+  await fetch("../data/pokedex.json")
     .then((response) => {
       return response.json();
     })
@@ -188,7 +188,7 @@ const parseDataIntoPokemon = async (data) => {
           })
       )
       .then((dataUrl) => {
-        return "RESULT:", dataUrl;
+        return dataUrl;
       });
 
   const stealColors = async () => {
@@ -211,7 +211,7 @@ const parseDataIntoPokemon = async (data) => {
         .querySelector(".chart-container")
         .setAttribute(
           "style",
-          `background-color: ${result[0]};background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+          `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
         );
     };
     co_sample_image.onload = () => {
@@ -229,17 +229,15 @@ const parseDataIntoPokemon = async (data) => {
         .querySelector(".chart-container")
         .setAttribute(
           "style",
-          `background-color: ${result[0]};background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+          `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
         );
     };
 
     sample_image.crossOrigin = "anonymous";
-
     sample_image.src = await toDataURL(
       document.querySelector(".Tier-5 img")?.src ||
         document.querySelector(".Shadow-Tier-5 img")?.src
     );
-    console.log(sample_image.src);
     co_sample_image.crossOrigin = "anonymous";
     co_sample_image.src = await toDataURL(
       document.querySelector(".Mega-Legendary img")?.src ||
@@ -269,7 +267,7 @@ const parseDataIntoPokemon = async (data) => {
   let image = document.createElement("img");
   image.classList.add("image-logo");
   image.setAttribute("height", "40px");
-  image.src = "./pokedex.png";
+  image.src = "../pokedex.png";
   document.querySelector(".chart-container").appendChild(image);
   stealColors();
 };
@@ -308,7 +306,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
 
   let shinyDot = document.createElement("img");
   // if (shinyPokemonsMap.get(Number(dexNumber)))
-  shinyDot.src = "./images/shiny.png";
+  shinyDot.src = "../images/shiny.png";
   shinyDot.setAttribute("height", "40px");
   shinyDot.classList.add("shiny");
   shinyDot.addEventListener("click", () => shinyDot.remove());
@@ -359,6 +357,10 @@ const buildUI = (
   h2.textContent = name;
   if (!form) h3.classList.add("empty");
   if (tier.includes("Mega")) form = "mega";
+  if (tier.includes("Shadow")) {
+    let shadowImage = document.createElement("img");
+    shadowImage.src = "../images/shadow.png";
+  }
   let imgWrapper = document.createElement("div");
   imgWrapper.classList.add("disc-container");
   let pokemon = document.createElement("img");
@@ -368,7 +370,7 @@ const buildUI = (
     let img = document.createElement("img");
     img.classList.add("type-disc");
     img.classList.add(type.toLowerCase());
-    img.src = `./icons/${type.toLowerCase()}.svg`;
+    img.src = `../icons/${type.toLowerCase()}.svg`;
     imgWrapper.appendChild(img);
   }
   for (const weather of boostedWeather) {
@@ -376,19 +378,19 @@ const buildUI = (
       let sunnyIcon = document.createElement("img");
       sunnyIcon.classList.add("weather");
       sunnyIcon.classList.add("Sunny");
-      sunnyIcon.src = "./images/Sunny.webp";
+      sunnyIcon.src = "../images/Sunny.webp";
       weatherWrapper.appendChild(sunnyIcon);
       let clearIcon = document.createElement("img");
       clearIcon.classList.add("weather");
       clearIcon.classList.add("Clear");
-      clearIcon.src = "./images/Clear.webp";
+      clearIcon.src = "../images/Clear.webp";
       weatherWrapper.appendChild(clearIcon);
       continue;
     }
     let weatherIcon = document.createElement("img");
     weatherIcon.classList.add("weather");
     weatherIcon.classList.add(weather);
-    weatherIcon.src = `./images/${weather}.webp`;
+    weatherIcon.src = `../images/${weather}.webp`;
     weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
