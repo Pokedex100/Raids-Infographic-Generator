@@ -432,11 +432,6 @@ h1.title {
     color: #1a171d;
 }
 
-h1.title::selection {
-    color: #89c391;
-    background-color: #437849;
-}
-
 .image-logo {
     text-align: center;
     display: block;
