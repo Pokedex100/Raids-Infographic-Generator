@@ -497,4 +497,8 @@ h1.title {
         margin-inline: auto;
     }
 
+    h1.title {
+        text-stroke: unset;
+        -webkit-text-stroke: unset;
+    }
 }
