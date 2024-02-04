@@ -96,7 +96,6 @@ button:disabled {
 }
 
 .essentials {
-    user-select: none;
     display: block;
     margin: 30px;
 }
