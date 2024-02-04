@@ -450,6 +450,7 @@ h1.title {
     position: relative;
     background-color: #1a171d;
     border-radius: 10px;
+    font-size: 1.5rem;
     cursor: pointer;
     inline-size: 280px;
     padding: 20px;
@@ -486,4 +487,10 @@ h1.title {
         inset-inline-start: 15px;
         inset-block-start: -15px;
     }
+
+    .image-logo {
+        block-size: 50px;
+        margin-inline: auto;
+    }
+
 }

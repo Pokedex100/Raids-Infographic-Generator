@@ -266,7 +266,7 @@ const parseDataIntoPokemon = async (data) => {
     buildTier(pokemonGroups[i], tierList[i]);
   let image = document.createElement("img");
   image.classList.add("image-logo");
-  image.setAttribute("height", "50px");
+  image.setAttribute("height", "70px");
   image.src = "./pokedexDark.png";
   let shadowTierInfo = document.createElement("div");
   shadowTierInfo.classList.add("info-tier");
