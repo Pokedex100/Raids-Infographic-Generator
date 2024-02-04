@@ -266,8 +266,8 @@ const parseDataIntoPokemon = async (data) => {
     buildTier(pokemonGroups[i], tierList[i]);
   let image = document.createElement("img");
   image.classList.add("image-logo");
-  image.setAttribute("height", "40px");
-  image.src = "./pokedex.png";
+  image.setAttribute("height", "50px");
+  image.src = "./pokedexDark.png";
   let shadowTierInfo = document.createElement("div");
   shadowTierInfo.classList.add("info-tier");
   shadowTierInfo.textContent =
@@ -449,7 +449,7 @@ const changeBg = () => {
   let color;
   color = tinycolor(color1.value).isLight() ? "#1a171d" : "#e1d7f6";
   title.setAttribute("style", `color: ${color}`);
-  document.querySelector(".image-logo").src = tinycolor(color2.value).isLight()
+  document.querySelector(".image-logo").src = tinycolor(color1.value).isLight()
     ? "./pokedexDark.png"
     : "./pokedex.png";
 };

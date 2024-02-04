@@ -361,6 +361,7 @@ h1 {
 
 h3 {
     color: rgb(225, 197, 128);
+    text-transform: capitalize;
 }
 
 h3.empty {
@@ -396,7 +397,7 @@ img.shiny {
     inset-block-start: 15px;
     inset-inline-start: 15px;
     z-index: 4;
-    filter: invert(37%) sepia(86%) saturate(2442%) hue-rotate(227deg) brightness(101%) contrast(100%) grayscale(0.8);
+    filter: invert(37%) sepia(86%) saturate(2442%) hue-rotate(227deg) brightness(101%) contrast(100%) grayscale(0.8) brightness(1.5);
 
 }
 
@@ -435,7 +436,7 @@ h1.title {
 .image-logo {
     text-align: center;
     display: block;
-    margin-inline: auto;
+    margin-inline-start: auto;
     margin-block-start: 60px;
 }
 
