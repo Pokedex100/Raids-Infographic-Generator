@@ -52,6 +52,7 @@
             downloadButton.addEventListener('click', () => {
                 const targetDiv = document.querySelector('.screenshot');
                 document.querySelector(".essentials").remove();
+                document.body.classList.add("graphic-generated")
                 document.body.setAttribute("style", "inline-size: 2100px")
                 document.targetDiv.setAttribute("style", "inline-size: 100%")
             });

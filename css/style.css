@@ -483,11 +483,11 @@ h1.title {
 }
 
 @media screen and (width<768px) {
-    .info-tier {
+    body:not(.graphic-generated) .info-tier {
         inline-size: 100%;
     }
 
-    .info-tier::after {
+    body:not(.graphic-generated) .info-tier::after {
         border: 10px solid #1a171d;
         border-block-start-color: transparent;
         border-inline-end-color: transparent;
@@ -496,7 +496,7 @@ h1.title {
         inset-block-start: -15px;
     }
 
-    .image-logo {
+    body:not(.graphic-generated) .image-logo {
         block-size: 50px;
         margin-inline: auto;
     }
