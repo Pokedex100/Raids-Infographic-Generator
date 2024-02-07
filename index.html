@@ -48,14 +48,34 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const downloadButton = document.querySelector('.download');
-
+            const targetDiv = document.querySelector('.screenshot');
             downloadButton.addEventListener('click', () => {
-                const targetDiv = document.querySelector('.screenshot');
-                document.querySelector(".essentials").remove();
+                Toastify({
+                    text: "Press Esc to Exit",
+                    duration: 3000,
+                    style: {
+                        background:
+                            "#1a171d",
+                        borderRadius: "7px",
+                        border: "1px solid #0e1012",
+                    },
+                    position: "center",
+                }).showToast();
+                document.querySelector(".essentials").style.display = "none";
                 document.body.classList.add("graphic-generated")
                 document.body.setAttribute("style", "inline-size: 2100px")
                 document.targetDiv.setAttribute("style", "inline-size: 100%")
+
+
             });
+            document.addEventListener('keydown', (e) => {
+                if (e.code === "Escape" || e.code === "F12") {
+                    document.querySelector(".essentials").style.display = "block";
+                    document.body.classList.remove("graphic-generated")
+                    document.body.removeAttribute("style")
+                    document.targetDiv.removeAttribute("style")
+                }
+            })
         });
     </script>
 </body>
