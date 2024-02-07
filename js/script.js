@@ -68,7 +68,7 @@ button.addEventListener("click", async () => {
     localStorage.clear(); // clear old stored data
     storage = (await fetchDataMonthly()) || localData;
     // shinyStorage = (await fetchShinyList()) || shinyData;
-    localStorage.setItem(timeStamp, JSON.stringify(localData));
+    // localStorage.setItem(timeStamp, JSON.stringify(localData));
     // localStorage.setItem(shinyTimeStamp, JSON.stringify(shinyData));
   } catch {
     storage = JSON.parse(localStorage.getItem(timeStamp)) || "";
