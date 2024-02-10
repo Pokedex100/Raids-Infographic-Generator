@@ -551,3 +551,18 @@ h1.title {
         transform: rotate(360deg);
     }
 }
+
+.difficultyLegend {
+    background-color: #1a171d;
+    box-sizing: content-box;
+    padding: 20px;
+    border-radius: 20px;
+    max-inline-size: 100%;
+}
+
+.flex-div {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}

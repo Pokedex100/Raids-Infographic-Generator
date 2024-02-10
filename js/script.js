@@ -268,13 +268,22 @@ const parseDataIntoPokemon = async (data) => {
   image.classList.add("image-logo");
   image.setAttribute("height", "80px");
   image.src = "./pokedexDark.png";
+  let difficultyLegend = document.createElement("img");
+  difficultyLegend.classList.add("difficultyLegend");
+  difficultyLegend.setAttribute("height", "55px");
+  difficultyLegend.src = "./images/Difficulty.svg";
   let shadowTierInfo = document.createElement("div");
   shadowTierInfo.classList.add("info-tier");
   shadowTierInfo.textContent =
     "Shadow Legendaries will only appear in Shadow Raids during the weekends.";
   shadowTierInfo.addEventListener("click", () => shadowTierInfo.remove());
   document.querySelector(".Shadow-Tier-5").appendChild(shadowTierInfo);
-  document.querySelector(".chart-container").appendChild(image);
+  let container = document.querySelector(".chart-container");
+  let div = document.createElement("div");
+  div.classList.add("flex-div");
+  div.appendChild(difficultyLegend);
+  div.appendChild(image);
+  container.appendChild(div);
   stealColors();
 };
 
