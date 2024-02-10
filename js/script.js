@@ -359,6 +359,7 @@ const buildUI = (
 ) => {
   let h3 = document.createElement("h3");
   if (tier.includes("Mega")) form = "mega";
+  if (form === "o") form = "";
   h3.textContent = form || `empty`;
   let h2 = document.createElement("h2");
   h2.textContent = name;
@@ -404,7 +405,7 @@ const buildUI = (
     weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
-    name + form.replace("dusk", "").replace(/(.+)/g, "-$1")
+    name + form.replace("dusk", "").replace(/(.+)/g, "-$1").replace("-o", "")
   ).toLowerCase()}.png`;
   pokemon.classList.add("pokemon-image");
   let span1 = document.createElement("span");
