@@ -270,7 +270,7 @@ const parseDataIntoPokemon = async (data) => {
   image.src = "./pokedexDark.png";
   let difficultyLegend = document.createElement("img");
   difficultyLegend.classList.add("difficultyLegend");
-  difficultyLegend.setAttribute("height", "55px");
+  difficultyLegend.setAttribute("height", "65px");
   difficultyLegend.src = "./images/Difficulty.svg";
   let shadowTierInfo = document.createElement("div");
   shadowTierInfo.classList.add("info-tier");
