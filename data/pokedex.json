@@ -39264,6 +39264,10 @@
       "Grass",
       "Ghost"
     ],
+    "hisuian": [
+      "Grass",
+      "Fighting"
+    ],
     "base": {
       "HP": 78,
       "Attack": 107,
