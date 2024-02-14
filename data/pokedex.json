@@ -47468,6 +47468,16 @@
     ]
   },
   {
+    "id": 905,
+    "name": {
+      "english": "Enamorus"
+    },
+    "type": [
+      "Fairy",
+      "Flying"
+    ]
+  },
+  {
     "id": 921,
     "name": {
       "english": "Pawmi"
