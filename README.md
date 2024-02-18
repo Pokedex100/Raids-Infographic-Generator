@@ -9,4 +9,4 @@ Shinies need to be added/removed manually by clicking the Shiny icon on the top 
 * Get the Chrome Extension below to download the image after clicking on "Generate Infographic"
 https://chromewebstore.google.com/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl 
 
-[raids](./images/raids.png)
+[raids](./images/Raid.webp)
