@@ -414,7 +414,7 @@ const buildUI = (
     weatherWrapper.appendChild(weatherIcon);
   }
   pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
-    name + form.replace("dusk", "").replace(/(.+)/g, "-$1").replace("-o", "")
+    name + form.replace("dusk", "").replace(/(.+)/g, "-$1").replace(/-o$/, "")
   ).toLowerCase()}.png`;
   pokemon.classList.add("pokemon-image");
   let span1 = document.createElement("span");
