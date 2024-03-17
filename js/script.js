@@ -162,7 +162,7 @@ const parseDataIntoPokemon = async (data) => {
     "Ultra Beasts",
     "Shadow Tier 5",
     "Mega Legendary",
-    "Primal Legendary",
+    "Primal",
     "Elite",
   ];
   let tierList = [];
