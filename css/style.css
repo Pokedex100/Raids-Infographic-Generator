@@ -300,13 +300,9 @@ li {
     margin-block-end: 20px;
 }
 
-/* h1 {
-    position: absolute;
+h1 {
     text-align: center;
-    translate: -50% 0;
-    inset-inline-start: 50%;
-    inset-block-start: -75px;
-} */
+}
 
 .raid-pokemon {
     position: relative;
@@ -348,6 +344,73 @@ li {
     font-weight: bold;
     padding: 7px;
     font-size: 2.5rem;
+}
+
+.tier-strip:hover::after {
+    user-select: none;
+    position: absolute;
+    content: "";
+    inline-size: 100%;
+    block-size: 100%;
+    z-index: 1;
+    border-radius: 30px;
+    display: grid;
+    place-items: center;
+    background-color: rgba(241, 228, 252, 0.334);
+    background-image: url("../images/eye.png");
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    pointer-events: none;
+    border: 2px solid #1a171d;
+}
+
+.tier-strip.tier1 {
+    background-color: #973f62bd;
+    border: 2px solid #d83c7a;
+}
+
+
+.tier-strip.tier3 {
+    background-color: #ecb341ab;
+    border: 2px solid #ca9327;
+}
+
+.tier-strip.tier5 {
+    background-color: #1d1f38ab;
+    border: 2px solid #191c43;
+}
+
+.tier-strip:is(.shadowtier1, .shadowtier3, .shadowtier5) {
+    background-color: #16071ad8;
+    border: 2px solid #240f42;
+}
+
+.tier-strip:is(.mega, .megalegendary) {
+    background-image: linear-gradient(-145deg, #F29A7A, #F4E87D, #B4D67D, #C1E4E8, #7ABCE7, #D6B9D7, #BF617D);
+    border: 2px solid #793363;
+}
+
+.tier-strip.tier4 {
+    background-color: #3f6997bd;
+    border: 2px solid #132865;
+}
+
+.tier-strip.ultrabeasts {
+    background-image: linear-gradient(45deg, #0059ff, #ff00e6) !important;
+    border: 2px solid #1d073f;
+}
+
+.tier-strip.primal {
+    background-image: linear-gradient(45deg, #d83c3c 5%, #132865);
+    border: 2px solid #BC909A;
+}
+
+.tier-strip.elite {
+    background-color: #973f3fbd;
+    border: 2px solid #d83c3c;
 }
 
 .difficulty-icons {
@@ -420,10 +483,6 @@ img.shiny:hover {
     filter: invert(84%) sepia(12%) saturate(664%) hue-rotate(210deg) brightness(104%) contrast(93%);
 }
 
-.tier-strip:hover {
-    text-decoration: line-through;
-    text-decoration-color: #dc143c;
-}
 
 .chart-container {
     background-color: #ffb499;

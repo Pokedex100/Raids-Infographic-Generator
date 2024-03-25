@@ -295,6 +295,7 @@ const buildTier = (group, tier) => {
   headerTitleImg.height = "250";
   headerTitleImg.src = "./images/" + tier + ".webp";
   headerArticle.classList.add("tier-strip");
+  headerArticle.classList.add(tier.toLowerCase().split(" ").join(""));
   headerTitleImg.addEventListener("click", () => div.remove());
   headerArticle.appendChild(headerTitleImg);
   div.appendChild(headerArticle);
