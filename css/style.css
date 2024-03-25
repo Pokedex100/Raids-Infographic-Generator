@@ -311,7 +311,9 @@ h1 {
 .raid-pokemon {
     position: relative;
     user-select: none;
-    background-color: #1a171d;
+    background-color: #1a171dcf;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -335,7 +337,9 @@ h1 {
     cursor: pointer;
     display: block;
     inline-size: 100%;
-    background-color: #e1d7f6;
+    background-color: #e1d7f6a5;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
     color: #1a171d;
     font-weight: bold;
@@ -458,9 +462,9 @@ h1.title {
     position: relative;
     background-color: #1a171d;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     cursor: pointer;
-    inline-size: 280px;
+    inline-size: 380px;
     padding: 20px;
     margin-block-start: auto;
     margin-block-end: 30px;
@@ -553,7 +557,9 @@ h1.title {
 }
 
 .difficultyLegend {
-    background-color: #1a171d;
+    background-color: #1a171de8;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
     box-sizing: content-box;
     padding: 20px;
     border-radius: 20px;
@@ -565,4 +571,11 @@ h1.title {
     align-items: flex-end;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.screenshot {
+    background: unset;
+    background-image: url(../images/loading_screen.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
