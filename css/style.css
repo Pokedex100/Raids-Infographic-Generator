@@ -300,10 +300,6 @@ li {
     margin-block-end: 20px;
 }
 
-h1 {
-    text-align: center;
-}
-
 .raid-pokemon {
     position: relative;
     user-select: none;
@@ -510,9 +506,9 @@ img.shiny:hover {
 h1.title {
     position: relative;
     inset-block-start: 25px;
-    font-size: 4rem;
+    font-size: 5rem;
+    text-align: center;
     font-weight: bolder;
-    /* color: #e1d7f6; */
     color: #1a171d;
 }
 
@@ -575,11 +571,6 @@ h1.title {
         block-size: 50px;
         margin-inline: auto;
     }
-
-    /* h1.title {
-        text-stroke: unset;
-        -webkit-text-stroke: unset;
-    } */
 
     .button {
         inline-size: 100% !important;
