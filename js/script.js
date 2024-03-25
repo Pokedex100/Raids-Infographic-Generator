@@ -289,11 +289,15 @@ const parseDataIntoPokemon = async (data) => {
 
 const buildTier = (group, tier) => {
   let div = document.createElement("div");
-  let h1 = document.createElement("h1");
-  h1.textContent = tier;
-  h1.classList.add("tier-strip");
-  h1.addEventListener("click", () => div.remove());
-  div.appendChild(h1);
+  let headerArticle = document.createElement("article");
+  let headerTitleImg = document.createElement("img");
+  headerTitleImg.alt = tier;
+  headerTitleImg.height = "250";
+  headerTitleImg.src = "./images/" + tier + ".webp";
+  headerArticle.classList.add("tier-strip");
+  headerTitleImg.addEventListener("click", () => div.remove());
+  headerArticle.appendChild(headerTitleImg);
+  div.appendChild(headerArticle);
   div.classList.add(tier.replace(/[\ ]/g, "-"));
   div.classList.add("tier");
   for (const pokemon of group.querySelectorAll(".bg-slate-700"))
