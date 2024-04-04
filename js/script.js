@@ -159,7 +159,7 @@ const parseDataIntoPokemon = async (data) => {
     "Tier 4",
     "Mega",
     "Tier 5",
-    "Ultra Beasts",
+    "Ultra Beast",
     "Shadow Tier 5",
     "Mega Legendary",
     "Primal",
@@ -425,10 +425,12 @@ const buildUI = (
     weatherIcon.src = `./images/${weather}.webp`;
     weatherWrapper.appendChild(weatherIcon);
   }
-  pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${(
+  let species = (
     name.replace(" ", "-") +
     form.replace("dusk", "").replace(/(.+)/g, "-$1").replace(/-o$/, "")
-  ).toLowerCase()}.png`;
+  ).toLowerCase();
+  if (species === "charizard-mega") species = "charizard-mega-x";
+  pokemon.src = `https://img.pokemondb.net/sprites/home/normal/${species}.png`;
   pokemon.classList.add("pokemon-image");
   let span1 = document.createElement("span");
   span1.classList.add("non-boosted-cp");
