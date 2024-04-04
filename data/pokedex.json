@@ -47487,6 +47487,15 @@
     ]
   },
   {
+    "id": 938,
+    "name": {
+      "english": "Tadbulb"
+    },
+    "type": [
+      "Electric"
+    ]
+  },
+  {
     "id": 962,
     "name": {
       "english": "Bombirdier"
