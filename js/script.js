@@ -319,6 +319,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
       ?.replace("unset", "") || "";
   let pokemonData = pokedexData.find((pokemon) => pokemon.id == dexNumber);
   let pokemonName = pokemonData.name.english;
+  if (tier.includes("Mega")) variant = "mega";
   let pokemonType = variant
     ? pokemonData[variant] || pokemonData.type
     : pokemonData.type;

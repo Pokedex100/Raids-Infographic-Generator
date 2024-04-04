@@ -290,6 +290,10 @@
       "Fire",
       "Flying"
     ],
+    "mega":[
+      "Fire",
+      "Dragon"
+    ],
     "base": {
       "HP": 78,
       "Attack": 84,
