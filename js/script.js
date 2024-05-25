@@ -316,6 +316,7 @@ const buildPokemonUnderTier = async (pokemon, parentEl, tier) => {
       ?.alt?.split("_")[1]
       ?.toLowerCase()
       ?.replace("alola", "alolan")
+      ?.replace("paldea", "paldean")
       ?.replace("unset", "") || "";
   let pokemonData = pokedexData.find((pokemon) => pokemon.id == dexNumber);
   let pokemonName = pokemonData.name.english;

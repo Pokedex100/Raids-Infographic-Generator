@@ -290,7 +290,7 @@
       "Fire",
       "Flying"
     ],
-    "mega":[
+    "mega": [
       "Fire",
       "Dragon"
     ],
@@ -10811,6 +10811,10 @@
     },
     "type": [
       "Water",
+      "Ground"
+    ],
+    "paldean": [
+      "Poison",
       "Ground"
     ],
     "base": {
