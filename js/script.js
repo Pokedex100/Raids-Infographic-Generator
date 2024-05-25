@@ -191,59 +191,59 @@ const parseDataIntoPokemon = async (data) => {
         return dataUrl;
       });
 
-  const stealColors = async () => {
-    let color_thief = new ColorThief();
-    let sample_image = new Image();
-    let co_sample_image = new Image();
+  // const stealColors = async () => {
+  //   let color_thief = new ColorThief();
+  //   let sample_image = new Image();
+  //   let co_sample_image = new Image();
 
-    sample_image.onload = () => {
-      let result = ntc.name(
-        "#" +
-          color_thief
-            .getColor(sample_image)
-            .map((x) => {
-              const hex = x.toString(16);
-              return hex.length === 1 ? "0" + hex : hex;
-            })
-            .join("")
-      );
-      document
-        .querySelector(".chart-container")
-        .setAttribute(
-          "style",
-          `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
-        );
-    };
-    co_sample_image.onload = () => {
-      let result = ntc.name(
-        "#" +
-          color_thief
-            .getColor(sample_image)
-            .map((x) => {
-              const hex = x.toString(16);
-              return hex.length === 1 ? "0" + hex : hex;
-            })
-            .join("")
-      );
-      document
-        .querySelector(".chart-container")
-        .setAttribute(
-          "style",
-          `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
-        );
-    };
+  //   sample_image.onload = () => {
+  //     let result = ntc.name(
+  //       "#" +
+  //         color_thief
+  //           .getColor(sample_image)
+  //           .map((x) => {
+  //             const hex = x.toString(16);
+  //             return hex.length === 1 ? "0" + hex : hex;
+  //           })
+  //           .join("")
+  //     );
+  //     document
+  //       .querySelector(".chart-container")
+  //       .setAttribute(
+  //         "style",
+  //         `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+  //       );
+  //   };
+  //   co_sample_image.onload = () => {
+  //     let result = ntc.name(
+  //       "#" +
+  //         color_thief
+  //           .getColor(sample_image)
+  //           .map((x) => {
+  //             const hex = x.toString(16);
+  //             return hex.length === 1 ? "0" + hex : hex;
+  //           })
+  //           .join("")
+  //     );
+  //     document
+  //       .querySelector(".chart-container")
+  //       .setAttribute(
+  //         "style",
+  //         `background-color: ${result[0]}; background-image: radial-gradient(at 19% 66%, ${result[1]} 0px, transparent 50%), radial-gradient(at 2% 30%, ${result[2]} 0px, transparent 50%), radial-gradient(at 49% 84%, ${result[3]} 0px, transparent 50%)`
+  //       );
+  //   };
 
-    sample_image.crossOrigin = "anonymous";
-    sample_image.src = await toDataURL(
-      document.querySelector(".Tier-5 img")?.src ||
-        document.querySelector(".Shadow-Tier-5 img")?.src
-    );
-    co_sample_image.crossOrigin = "anonymous";
-    co_sample_image.src = await toDataURL(
-      document.querySelector(".Mega-Legendary img")?.src ||
-        document.querySelector(".Primal-Legendary img")?.src
-    );
-  };
+  //   sample_image.crossOrigin = "anonymous";
+  //   sample_image.src = await toDataURL(
+  //     document.querySelector(".Tier-5 img")?.src ||
+  //       document.querySelector(".Shadow-Tier-5 img")?.src
+  //   );
+  //   co_sample_image.crossOrigin = "anonymous";
+  //   co_sample_image.src = await toDataURL(
+  //     document.querySelector(".Mega-Legendary img")?.src ||
+  //       document.querySelector(".Primal-Legendary img")?.src
+  //   );
+  // };
 
   const sortedArrays = tierList
     .map((element, index) => ({ element, index }))
@@ -284,7 +284,7 @@ const parseDataIntoPokemon = async (data) => {
   div.appendChild(difficultyLegend);
   div.appendChild(image);
   container.appendChild(div);
-  stealColors();
+  // stealColors();
 };
 
 const buildTier = (group, tier) => {
